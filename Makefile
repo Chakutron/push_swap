@@ -6,7 +6,7 @@
 #    By: mchiboub <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 15:15:55 by mchiboub          #+#    #+#              #
-#    Updated: 2023/06/18 17:40:44 by mchiboub         ###   ########.fr        #
+#    Updated: 2023/06/18 17:59:08 by mchiboub         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,8 +57,6 @@ OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 GREEN = \033[0;32m
 NC = \033[0m
 
-all: ${NAME}
-
 .c.o:
 		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -lreadline
 
@@ -71,6 +69,8 @@ bonus: ${OBJS_BONUS}
 		@echo "Generating ${GREEN}${NAME_BONUS}${NC} executable.."
 		@make -sC ${PRINTF} all
 		@${CC} -o ${NAME_BONUS} ${OBJS_BONUS} ${PRINTF}/${PRINTF_LIB} -lreadline
+
+all: ${NAME} bonus
 
 clean:
 		@echo "Deleting object files.."
