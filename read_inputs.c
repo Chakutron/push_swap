@@ -6,7 +6,7 @@
 /*   By: mchiboub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:26:32 by mchiboub          #+#    #+#             */
-/*   Updated: 2023/06/17 16:01:36 by mchiboub         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:30:36 by mchiboub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	exec_inputs_1(t_data *data, char *str, int print)
 	else if (strcmp(str, "rrr") == 0)
 		exec_rrr(data, print);
 	else
-		return (0);
+		error_parameter();
 	return (1);
 }
 

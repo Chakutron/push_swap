@@ -6,7 +6,7 @@
 /*   By: mchiboub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:26:32 by mchiboub          #+#    #+#             */
-/*   Updated: 2023/06/17 16:05:19 by mchiboub         ###   ########.fr       */
+/*   Updated: 2023/06/18 16:33:16 by mchiboub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,23 @@ void	read_operations(t_data *data)
 	while (i > 0)
 	{
 		i = read(0, &c, 1);
-		if (c == '\n')
+		if (c == '\n' && ft_strlen(data->str) > 0)
 		{
 			exec_inputs_1(data, data->str, 0);
 			init_str(data);
 		}
 		else
-			data->str[ft_strlen(data->str)] = c;
+		{
+			if (ft_strlen(data->str) == 3)
+			{
+				
+				while (i != 0)
+					i = read(0, &c, 1);
+				error_parameter();
+			}
+			else
+				data->str[ft_strlen(data->str)] = c;
+		}
 	}
 }
 
