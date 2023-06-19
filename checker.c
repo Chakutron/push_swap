@@ -6,7 +6,7 @@
 /*   By: mchiboub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:26:32 by mchiboub          #+#    #+#             */
-/*   Updated: 2023/06/18 16:33:16 by mchiboub         ###   ########.fr       */
+/*   Updated: 2023/06/19 15:19:45 by mchiboub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	read_operations(t_data *data)
 		{
 			if (ft_strlen(data->str) == 3)
 			{
-				
 				while (i != 0)
 					i = read(0, &c, 1);
 				error_parameter();
